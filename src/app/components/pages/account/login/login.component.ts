@@ -29,9 +29,6 @@ export class LoginComponent {
   ) {
     config.backdrop = 'static';
     config.keyboard = false;
-    userService.getUser().subscribe((res) => {
-      console.log(res);
-    });
   }
 
   ngOnInit(): void {

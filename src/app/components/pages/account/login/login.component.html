@@ -44,7 +44,7 @@
   </form>
 </ng-template>
 
-<ng-container *ngIf="userService.getToken(); else loginButton">
+<ng-container *ngIf="userService.getToken(); else notLogin">
   <div class="row">
     <div class="col">
       <div ngbDropdown class="d-inline-block">
@@ -63,7 +63,7 @@
   </div>
 </ng-container>
 
-<ng-template #loginButton>
+<ng-template #notLogin>
   <button class="btn" (click)="openVerticallyCentered(content)">
     <i class="bi bi-person fw-bolder fs-4"></i>
   </button>

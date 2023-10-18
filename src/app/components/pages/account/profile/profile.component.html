@@ -1,1 +1,7 @@
-<p>profile works!</p>
+<div>
+  <h2>User Profile:</h2>
+  <div *ngIf="userProfile">
+    <h3>{{ userProfile.fullname }}</h3>
+    <p>Age: {{ userProfile.age }}</p>
+  </div>
+</div>

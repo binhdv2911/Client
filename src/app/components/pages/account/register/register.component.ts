@@ -33,7 +33,7 @@ export class RegisterComponent {
 
     this.userService.register(newUser).subscribe(
       () => {
-        this.router.navigate(['/login']);
+        this.router.navigate(['/home-page']);
       },
       (error) => {
         console.log('Registration failed:', error);

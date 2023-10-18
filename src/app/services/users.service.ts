@@ -5,13 +5,14 @@ import { Observable } from 'rxjs';
 import { Injectable } from '@angular/core';
 import { Users } from '../models/users';
 import jwt from 'jwt-decode';
+import { ProfileResponse } from '../models/profile';
 
 @Injectable({
   providedIn: 'root',
 })
 export class UsersService {
   Base_URL = environment.apiUrl;
-  constructor(private http: HttpClient, private route: Router) {}
+  constructor(private http: HttpClient, private router: Router) {}
 
   getUser(): Observable<Users[]> {
     return this.http.get<Users[]>(this.Base_URL + '/user');
@@ -23,14 +24,16 @@ export class UsersService {
   login(userData: any): Observable<any> {
     return this.http.post<any>(this.Base_URL + '/user/login', userData);
   }
-
   logOut() {
     localStorage.removeItem('_sa');
+    this.router.navigate(['/home-page']);
   }
   getToken() {
     return localStorage.getItem('_sa');
   }
-  getProfile(username: any): Observable<Users[]> {
-    return this.http.get<Users[]>(this.Base_URL + `/user/profile/${username}`);
+  getProfile(username: any): Observable<ProfileResponse> {
+    return this.http.get<ProfileResponse>(
+      this.Base_URL + `/user/profile/${username}`
+    );
   }
 }

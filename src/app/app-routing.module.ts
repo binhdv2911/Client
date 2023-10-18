@@ -12,7 +12,6 @@ const routes: Routes = [
     redirectTo: '/home-page',
   },
   { path: 'home-page', component: HomepageComponent },
-  { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'profile/:username', component: ProfileComponent },
 ];
