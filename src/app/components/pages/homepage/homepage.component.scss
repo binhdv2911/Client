@@ -1,0 +1,18 @@
+.hero {
+  background-image: url(../../../../assets/bg_hero.avif);
+  width: 100%;
+  height: calc(100vh - 89.68px);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  top: 0;
+  .shopping-now {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    a {
+      padding: 0.5rem 3rem;
+      border: 1px solid black;
+    }
+  }
+}
